@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Serkuss Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        header {
+            background-color: rgba(31, 31, 31, 0.9);
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #e94560;
+        }
+
+        nav button {
+            background: none;
+            border: 1px solid #e94560;
+            color: #e94560;
+            padding: 0.5em 1em;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 2em;
+            max-width: 800px;
+            margin: auto;
+            background-color: rgba(18, 18, 18, 0.9);
+            border-radius: 8px;
+        }
+
+        .accordion {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            cursor: pointer;
+            padding: 1em;
+            margin-top: 1em;
+            text-align: left;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 1.1em;
+            border: 1px solid #e94560;
+        }
+
+        .active, .accordion:hover {
+            background-color: #2a2a2a;
+        }
+
+        .panel {
+            padding: 0 1em;
+            background-color: #1a1a1a;
+            display: none;
+            overflow: hidden;
+            border-left: 2px solid #e94560;
+            border-right: 2px solid #e94560;
+            border-bottom: 2px solid #e94560;
+        }
+
+        .panel p, .panel ul {
+            padding: 1em 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2em 1em 1em 1em;
+            background-color: rgba(31, 31, 31, 0.9);
+            color: #999;
+            font-size: 0.95em;
+        }
+
+        a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Serkuss Academy</h1>
+        <nav>
+            <button onclick="switchLanguage('ru')">🇷🇺 Рус</button>
+            <button onclick="switchLanguage('de')">🇩🇪 Deu</button>
+        </nav>
+    </header>
+
+    <section>
+        <button class="accordion active">👋 <span class="lang" data-ru="Привет!" data-de="Hallo!">Привет!</span></button>
+        <div class="panel" style="display:block;">
+            <p class="lang" 
+               data-ru="Хочешь научиться играть на электрогитаре? Может, ты сам всегда мечтал, или твой ребёнок тащится по музыке — в любом случае, ты попал в правильное место. Я верю, что талант можно раскрыть в любом возрасте, и моя цель — помочь тебе зазвучать. Рок, металл, грув, эмоции — всё это становится ближе, когда есть гитара в руках и тот, кто может объяснить, как с ней подружиться 🎸"
+               data-de="Willst du E-Gitarre lernen? Vielleicht träumst du schon lange davon oder dein Kind liebt Musik — in jedem Fall bist du hier richtig. Ich glaube, dass man Talent in jedem Alter entfalten kann, und mein Ziel ist es, dir zu helfen, laut zu klingen. Rock, Metal, Groove, Emotionen — all das wird greifbar mit einer Gitarre in der Hand und jemandem, der zeigt, wie man sie versteht 🎸">
+               Хочешь научиться играть на электрогитаре? Может, ты сам всегда мечтал, или твой ребёнок тащится по музыке — в любом случае, ты попал в правильное место. Я верю, что талант можно раскрыть в любом возрасте, и моя цель — помочь тебе зазвучать. Рок, металл, грув, эмоции — всё это становится ближе, когда есть гитара в руках и тот, кто может объяснить, как с ней подружиться 🎸
+            </p>
+        </div>
+
+        <button class="accordion">🧑‍🎸 <span class="lang" data-ru="Обо мне" data-de="Über mich">Обо мне</span></button>
+        <div class="panel">
+            <p class="lang" 
+               data-ru="Меня зовут Sergei. Я не просто играю — я живу гитарой. Начал свой путь с акустики, прошёл через музыкальную школу и уже 6 лет сливаю душу в струны. Музыка — это не просто хобби, это голос внутри. Вместе будет интересно, мощно и в кайф 🤘"
+               data-de="Ich heiße Sergei. Ich spiele nicht nur — ich lebe mit der Gitarre. Ich habe mit Akustikgitarre angefangen, eine Musikschule besucht und spiele seit über 6 Jahren. Musik ist nicht nur ein Hobby — sie ist eine Stimme in mir. Zusammen wird’s spannend, laut und geil 🤘">
+               Меня зовут Sergei. Я не просто играю — я живу гитарой. Начал свой путь с акустики, прошёл через музыкальную школу и уже 6 лет сливаю душу в струны. Музыка — это не просто хобби, это голос внутри. Вместе будет интересно, мощно и в кайф 🤘
+            </p>
+        </div>
+
+        <button class="accordion">🎼 <span class="lang" data-ru="Что я предлагаю" data-de="Was ich anbiete">Что я предлагаю</span></button>
+        <div class="panel">
+            <ul class="lang" 
+                data-ru="<li>🔹 Базовая техника игры</li><li>🔹 Риффы и соло — от простого до мясного</li><li>🔹 Теория и сольфеджио</li><li>🔹 Основы записи звука</li>" 
+                data-de="<li>🔹 Grundlegende Spieltechniken</li><li>🔹 Riffs und Solos – von leicht bis heavy</li><li>🔹 Theorie & Gehörbildung</li><li>🔹 Grundlagen der Musikaufnahme</li>">
+                <li>🔹 Базовая техника игры</li>
+                <li>🔹 Риффы и соло — от простого до мясного</li>
+                <li>🔹 Теория и сольфеджио</li>
+                <li>🔹 Основы записи звука</li>
+            </ul>
+        </div>
+
+        <button class="accordion">💰 <span class="lang" data-ru="Цены" data-de="Preise">Цены</span></button>
+        <div class="panel">
+            <p class="lang" 
+               data-ru="🖥 Онлайн-уроки от 20€/час. 🏠 Живые занятия от 25€/час. 🔥 Первая пробная встреча — дешевле!"
+               data-de="🖥 Online-Unterricht ab 20€/Stunde. 🏠 Präsenzunterricht ab 25€/Stunde. 🔥 Erste Probestunde — günstiger!">
+               🖥 Онлайн-уроки от 20€/час. 🏠 Живые занятия от 25€/час. 🔥 Первая пробная встреча — дешевле!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>📍 76530 Baden-Baden, Baden-Württemberg, Deutschland<br>
+        📲 Telegram: <a href="https://t.me/raper2281337">@raper2281337</a> | ✉️ Email: <a href="mailto:Serkuss2001@gmail.com">Serkuss2001@gmail.com</a></p>
+        <p>© 2025 Serkuss Academy</p>
+    </footer>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        }
+
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(el => {
+                if (el.dataset[lang]) {
+                    if (el.tagName === "UL") {
+                        el.innerHTML = el.dataset[lang];
+                    } else {
+                        el.textContent = el.dataset[lang];
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
